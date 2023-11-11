@@ -2,7 +2,7 @@ import { getInputDirection, resetDirection } from "./input.js";
 import { avaiablePositions, equalPositions } from "./grid.js";
 import { GAME_BOARD_WIDTH } from "./game.js";
 
-export const SNAKE_SPEED = 20;
+export const SNAKE_SPEED = 13;
 
 let snakeBody;
 
@@ -25,7 +25,12 @@ export function draw(gameBoard) {
         const snakeElement = document.createElement('div');
         snakeElement.style.gridColumnStart = segment.x;
         snakeElement.style.gridRowStart = segment.y;
-        snakeElement.classList.add('snake');
+        if(equalPositions(segment, getSnakeHeadPosition())) {
+            snakeElement.classList.add('snake-head');
+        }
+        else {
+            snakeElement.classList.add('snake-tail');
+        }
         gameBoard.appendChild(snakeElement);
     })
 }

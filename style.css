@@ -13,20 +13,30 @@ body {
 }
 
 #game-board {
-    background-color: rgb(165, 165, 165);
+    background-image: url("img/map.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     width: 100vmin;
     height: 100vmin;
     display: grid;
-    grid-template-rows: repeat(21, 1fr);
-    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    grid-template-columns: repeat(15, 1fr);
 }
 
-.snake {
-    background-color: aqua;
-    border: .25vmin solid black;
+.snake-head {
+    background-image: url("img/head.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.snake-tail {
+    background-image: url("img/tail.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .food {
-    background-color: red;
-    border: .25vmin solid black;
+    background-image: url("img/food.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }

@@ -8,7 +8,7 @@ const gameBoard = document.getElementById('game-board');
 const gridStyles = window.getComputedStyle(gameBoard);
 export const GAME_BOARD_WITDH = gridStyles.getPropertyValue('grid-template-columns').split(' ').length;
 export const GAME_BOARD_WIDTH = gridStyles.getPropertyValue('grid-template-rows').split(' ').length;
-
+console.log(GAME_BOARD_WIDTH);
 let lastRenderTime = 0;
 
 function main(currentTime) {
@@ -41,7 +41,11 @@ function collision() {
 
 function gameOver() {
     if(collision()) {
-        window.alert(`YOU LOSE! Score: ${getSnakeLength()}`);
+        window.alert(`KONIEC GRY!\n
+        Michał zjadł ${getSnakeLength()-1} kebabów.\n
+        Zarobił ${(getSnakeLength()-1)*5} złotych.\n
+        To wszystko dzięki Tobie!\n
+        Michał jest Ci wdzięczny.`);
         newGame();
     }
 }
